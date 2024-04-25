@@ -1,6 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark p-2 bg-black">
+<nav class="navbar navbar-expand-lg navbar-light p-2 bg">
   <div class="container">
-    <a class="navbar-brand" href="/">Notes App</a>
+    <a class="navbar-brand" href="/">NoApp3</a>
+    <!-- Tambahkan elemen jam di sini -->
+    <div id="clock" class="ms-auto"></div>
+    <!-- Tombol Toggle -->
     <button
       class="navbar-toggler"
       type="button"
@@ -12,6 +15,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Navbar Items -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -32,8 +36,8 @@
               Notes
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/notes">All Notes</a>
-              <a class="dropdown-item" href="/notes/add">Add A Note</a>
+              <a class="dropdown-item" href="/notes">Semua Catatan</a>
+              <a class="dropdown-item" href="/notes/add">Tambah Catatan</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/auth/logout">Logout</a>
             </ul>
@@ -50,3 +54,21 @@
     </div>
   </div>
 </nav>
+
+<!-- JavaScript untuk menampilkan jam -->
+<script>
+  function displayTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+    document.getElementById('clock').textContent = timeString;
+  }
+
+  // Panggil fungsi displayTime setiap detik (1000 milidetik)
+  setInterval(displayTime, 1000);
+
+  // Panggil displayTime saat halaman dimuat untuk menampilkan waktu awal
+  displayTime();
+</script>

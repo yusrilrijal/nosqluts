@@ -1,11 +1,27 @@
 body {
-  background: #121212;
+  background: #BED7DC;
+  /* background-image: url(papus.png); */
+  /* background-size: 15%; */
 }
 
 .logo {
-  width: 30%;
+  width: 20px;
 }
 
-.bg-black {
-  background: #090909;
+.bg {
+  background: #B3C8CF !important;
 }
+
+/* Untuk mengubah warna latar belakang kartu menjadi biru */
+.card {
+  background-color: #F1EEDC;
+  transition: box-shadow 0.3s ease; /* Transisi untuk efek bayangan */
+}
+
+.card-title {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+

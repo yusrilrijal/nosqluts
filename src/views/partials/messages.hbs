@@ -1,23 +1,27 @@
 {{#if success_msg}}
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <div id="successAlert" class="alert alert-success alert-dismissible fade show" role="alert">
     {{success_msg}}
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {{/if}}
 
 {{#if error_msg}}
-  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <div id="errorAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
     {{error_msg}}
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="alert"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {{/if}}
+
+<script>
+  // Fungsi untuk menghapus alert setelah beberapa detik
+  setTimeout(function() {
+    var successAlert = document.getElementById('successAlert');
+    if (successAlert) {
+      successAlert.remove();
+    }
+    var errorAlert = document.getElementById('errorAlert');
+    if (errorAlert) {
+      errorAlert.remove();
+    }
+  }, 5000); // Waktu dalam milidetik (misalnya 5000 milidetik = 5 detik)
+</script>
